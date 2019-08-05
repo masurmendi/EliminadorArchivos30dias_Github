@@ -1,0 +1,2 @@
+2019-03-14 08:37:41.2885 INFO 14/03/2019 8:37:41 - Se va a eliminar el archivo C:\Users\masurmendi.ATECNA\Desktop\PDFaBorrar\PRUEBAS\CLIENTESID-20181219143238.pdf
+2019-03-14 08:37:41.8879 INFO 14/03/2019 8:37:41 - Se ha eliminado el archivo C:\Users\masurmendi.ATECNA\Desktop\PDFaBorrar\PRUEBAS\CLIENTESID-20181219143238.pdf

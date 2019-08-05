@@ -1,0 +1,31 @@
+﻿Imports System.IO
+
+Module Module1
+
+    Sub Main()
+
+        Dim folder1 As New DirectoryInfo(My.Settings.Ruta1)
+        Dim folder2 As New DirectoryInfo(My.Settings.Ruta2)
+
+
+
+        For Each file As FileInfo In folder1.GetFiles()
+            Dim fechaModificacion As Date = file.LastWriteTime()
+            Dim fechaLimite As Date = Date.Today.AddDays(My.Settings.DiasMenos)
+
+            If fechaLimite > fechaModificacion Then
+                file.Delete()
+            End If
+        Next
+
+        For Each file As FileInfo In folder2.GetFiles()
+            Dim fechaModificacion As Date = file.LastWriteTime()
+            Dim fechaLimite As Date = Date.Today.AddDays(My.Settings.DiasMenos)
+
+            If fechaLimite > fechaModificacion Then
+                file.Delete()
+            End If
+        Next
+    End Sub
+
+End Module

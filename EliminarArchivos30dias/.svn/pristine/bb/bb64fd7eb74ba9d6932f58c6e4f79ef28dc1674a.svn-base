@@ -1,0 +1,30 @@
+﻿Imports System.IO
+
+Module Module1
+
+    Sub Main()
+
+        Dim carpetas(1) As DirectoryInfo
+
+        carpetas(0) = New DirectoryInfo(My.Settings.Ruta1)
+        carpetas(1) = New DirectoryInfo(My.Settings.Ruta2)
+
+        Try
+            For Each folder In carpetas
+                For Each file As FileInfo In folder.GetFiles()
+                    Dim fechaModificacion As Date = file.LastWriteTime()
+                    Dim fechaLimite As Date = Date.Today.AddDays(My.Settings.DiasMenos)
+
+                    If fechaLimite > fechaModificacion Then
+                        file.Delete()
+                    End If
+                Next
+            Next
+
+        Catch ex As Exception
+
+        End Try
+
+    End Sub
+
+End Module
